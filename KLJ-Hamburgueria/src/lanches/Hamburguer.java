@@ -2,17 +2,24 @@ package lanches;
 
 public class Hamburguer {
 	
+	 private static int orderCounter = 1;
+	
+	private int counter; 
 	private String bread;
 	private String meat;
 	private String vegetable;
 	private String sauce;
-	
-	public Hamburguer(String bread, String meat) {
-	
+
+	public Hamburguer(String bread, String meat, String vegetable, String sauce) {
+		this.counter = orderCounter;
 		this.bread = bread;
 		this.meat = meat;
 		this.vegetable = vegetable;
 		this.sauce = sauce;
+		Hamburguer.orderCounter +=1;
+	}
+	
+	public Hamburguer() {
 		
 	}
 
@@ -50,16 +57,14 @@ public class Hamburguer {
 
 	@Override
 	public String toString() {
-		return "\nBread: " + bread 
+		return 
+				 "\nPedido: #" + this.counter
+				+ "\nBread: " + bread
 				+ "\nMeat: " + meat 
 				+ "\nVegetable: " + vegetable 
-				+ "\nSauce:  " + sauce;
+				+ "\nSauce:  " + sauce
+				+ "\n";
 	}
-	
-	
-	
-	
-	
-	
+
 
 }
