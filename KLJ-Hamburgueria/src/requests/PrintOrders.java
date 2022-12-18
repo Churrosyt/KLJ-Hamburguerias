@@ -1,27 +1,31 @@
 package requests;
 
+import java.util.Locale;
+
+import IngredientsHamburguer.BreadEnums;
+
 public class PrintOrders {
+	private static BreadEnums[] breads = BreadEnums.values();  
 	
 	public void listOperations() {
 		System.out.println("***** Selecione uma opção que deseja realizar *****");
 		System.out.println("------------------------------------------------------");
-		System.out.println("|   Opção 1 - MONTAR HAMBURGUER     |");
-		System.out.println("|   Opção 2 - HAMBURGUER PRONTOS    |");
-		System.out.println("|   Opção 3 - REFRIGERANTE          |");
-		System.out.println("|   Opção 4 - MILKSHAKE             |");
-		System.out.println("|   Opção 5 - LISTA DE PEDIDOS      |");
-		System.out.println("|   Opção 6 - Finalizar Pedido      |");
+		System.out.println("|   Opção 1 - MONTAR HAMBURGUER      |");
+		System.out.println("|   Opção 2 - HAMBURGUER PRONTOS     |");
+		System.out.println("|   Opção 3 - REFRIGERANTE           |");
+		System.out.println("|   Opção 4 - MILKSHAKE              |");
+		System.out.println("|   Opção 5 - LISTA DE PEDIDOS       |");
+		System.out.println("|   Opção 6 - Finalizar Pedido       |");
 	}
 
 	public void listBread() {
 		
 		System.out.println(" ----- Ecolha os tipos de Paes -----");
-		System.out.println("|   Opção 1 - Bun            $(0.50)  |");
-		System.out.println("|   Opção 2 - Bread Roll     $(0.70)  |");
-		System.out.println("|   Opção 3 - White Bread    $(0.60)  |");
-		System.out.println("|   Opção 4 - Cheese breads  $( 1 )   |");
-		System.out.println("|   Opção 5 - Twist Bread    $(0.90)  |");
-		System.out.println("|   Opção 6 - Voltar          		  |");
+		int i =0;
+		for(  ; i < breads.length ; i++) {
+		System.out.printf("|   Opção %d - %s $(%.2f)  |\n",(i+1),breads[i].nameE(),breads[i].valueE());
+		}
+		System.out.printf("|   Opção %d - Voltar   |\n" , (i+1));
 	}
 
 	public void listMeat() {

@@ -2,12 +2,12 @@ package requests;
 
 import java.util.Scanner;
 
+import IngredientsHamburguer.BreadEnums;
 import IngredientsHamburguer.Hamburguer;
-import IngredientsHamburguer.HamburguerBread;
 
 public class ReadyOrders {
 	static Scanner input = new Scanner(System.in);
-	static Hamburguer hamburguer = new Hamburguer();
+
 	static PrintOrders print = new PrintOrders();
 	
 	public static void main(String[] args) {	
@@ -52,15 +52,18 @@ public class ReadyOrders {
 	public static void assembleHamburguer() {
 		
 		print.listBread();
-		int selectOption = input.nextInt();
-		Hamburguer a1 = new Hamburguer();
-		HamburguerBread hamburguerBread = new HamburguerBread(selectOption);
+		// TRATAR
+		int selectOption = input.nextInt() - 1;
+		BreadEnums bread = BreadEnums.values()[selectOption];
+		Hamburguer hamburguer = new Hamburguer(bread);
+
+		System.out.printf("%.2f  %s", hamburguer.getBreadValue(), hamburguer.getBreadName());
 		
-		System.out.println(hamburguerBread.toString());
 	}
 	
 	public static void listMeat() {
-		
+		Hamburguer ham = new Hamburguer();
+		System.out.println(ham.toString());
 	}
 	
 	
