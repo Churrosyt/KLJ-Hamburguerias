@@ -1,4 +1,6 @@
-package IngredientsHamburguer;
+package hamburguer;
+
+import IngredientsHamburguer.BreadEnums;
 
 public class Hamburguer {
 
@@ -13,11 +15,11 @@ public class Hamburguer {
 	}
 	
 	public Double getBreadValue() {
-		return this.breadEnums.valueE();
+		return this.breadEnums.valueBread();
 	}
 	
 	public String getBreadName() {
-		return this.breadEnums.name();
+		return this.breadEnums.nameBread();
 	}
 
 	public Hamburguer(BreadEnums breadEnums) {
@@ -48,7 +50,8 @@ public class Hamburguer {
 
 	@Override
 	public String toString() {
-		return "\nBread: " + "\nMeat: ";
+		return "Bread: " + getBreadName()
+				+ "";
 
 	}
 

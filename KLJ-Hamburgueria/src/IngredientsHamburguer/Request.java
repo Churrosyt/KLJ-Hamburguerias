@@ -3,7 +3,7 @@ package IngredientsHamburguer;
 public class Request {
 	
 	public static void main(String[] args) {
-		BreadEnums[] set = BreadEnums.values();
+	/*	BreadEnums[] set = BreadEnums.values();
 		
 		
 		BreadEnums get = set[0];
@@ -12,8 +12,8 @@ public class Request {
 		double x = 0;
 		for(BreadEnums enumm : set) {
 			
-			x += enumm.valueE();
+			x += enumm.valueBread();
 		}
-		System.out.print(x);
+		System.out.print(String.format("%.2f", x));*/
 	}
 }

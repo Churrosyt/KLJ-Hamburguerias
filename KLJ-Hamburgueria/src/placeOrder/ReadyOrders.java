@@ -1,9 +1,9 @@
-package requests;
+package placeOrder;
 
 import java.util.Scanner;
 
 import IngredientsHamburguer.BreadEnums;
-import IngredientsHamburguer.Hamburguer;
+import hamburguer.Hamburguer;
 
 public class ReadyOrders {
 	static Scanner input = new Scanner(System.in);
@@ -51,13 +51,13 @@ public class ReadyOrders {
 	
 	public static void assembleHamburguer() {
 		
-		print.listBread();
+		print.BreadList();
 		// TRATAR
 		int selectOption = input.nextInt() - 1;
 		BreadEnums bread = BreadEnums.values()[selectOption];
 		Hamburguer hamburguer = new Hamburguer(bread);
 
-		System.out.printf("%.2f  %s", hamburguer.getBreadValue(), hamburguer.getBreadName());
+		System.out.printf("%s", hamburguer.toString() );
 		
 	}
 	
