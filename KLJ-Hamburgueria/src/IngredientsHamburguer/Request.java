@@ -1,19 +1,24 @@
 package IngredientsHamburguer;
 
+import hamburguer.Hamburguer;
+
 public class Request {
 	
 	public static void main(String[] args) {
 	/*	BreadEnums[] set = BreadEnums.values();
+		MeatEnums[] meatt = MeatEnums.values();
 		
 		
 		BreadEnums get = set[0];
-		Hamburguer ham = new Hamburguer(get);
+		MeatEnums meat = meatt[0];
+		Hamburguer ham = new Hamburguer(get, meat);
 		System.out.println(ham.getBreadValue());
-		double x = 0;
-		for(BreadEnums enumm : set) {
+		String x = "";
+		for(MeatEnums enumm : meatt) {
 			
-			x += enumm.valueBread();
+			x = enumm.meatName();
+			
 		}
-		System.out.print(String.format("%.2f", x));*/
+			System.out.printf(String.format("%s ", x));*/
 	}
 }

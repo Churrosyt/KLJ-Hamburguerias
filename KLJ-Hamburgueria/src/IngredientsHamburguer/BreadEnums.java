@@ -8,19 +8,19 @@ public enum BreadEnums {
 	,Cheese_breads("Cheese breads ",4.10)
 	,Twist_Bread("Twist Bread",2.10);
 	
-	private String nameBread;
-	private Double valueBread;
+	private String breadName;
+	private Double breadValue;
 	
-	private BreadEnums(String nameBread, Double valueBread) {
-		this.nameBread = nameBread;
-		this.valueBread = valueBread;
+	private BreadEnums(String breadName, Double breadValue) {
+		this.breadName = breadName;
+		this.breadValue = breadValue;
 	}
 	
-	public String nameBread() {
-		return nameBread;
+	public String BreadName() {
+		return breadName;
 	}
-	public Double valueBread() {
-		return valueBread;
+	public Double breadValue() {
+		return breadValue;
 	}
 	
 /*	@Override

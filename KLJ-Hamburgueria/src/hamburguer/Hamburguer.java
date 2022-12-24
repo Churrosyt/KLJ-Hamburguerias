@@ -1,58 +1,68 @@
 package hamburguer;
 
+import java.util.ArrayList;
+
 import IngredientsHamburguer.BreadEnums;
+import IngredientsHamburguer.MeatEnums;
 
 public class Hamburguer {
 
-	protected Integer selectOption;
-	protected Integer quantityIngredients;
-
-	
 	private BreadEnums breadEnums;
+    private ArrayList<MeatEnums> meatEnums = new ArrayList<>();
 
-	public Hamburguer() {
-
-	}
-	
-	public Double getBreadValue() {
-		return this.breadEnums.valueBread();
-	}
-	
-	public String getBreadName() {
-		return this.breadEnums.nameBread();
-	}
-
-	public Hamburguer(BreadEnums breadEnums) {
+	/*public Hamburguer(BreadEnums breadEnums, MeatEnums meatEnums) {
 		this.breadEnums = breadEnums;
+		this.meatEnums .add(meatEnums);
+	}*/
+    
+    public Hamburguer() {
+    	
+    }
+	public Hamburguer(BreadEnums breadEnums, ArrayList<MeatEnums> meatEnums) {
+		this.breadEnums = breadEnums;
+		this.meatEnums = meatEnums;
 	}
 
-	public Hamburguer(Integer selectOption, Integer quantityIngredients) {
-		super();
-		this.selectOption = selectOption;
-		this.quantityIngredients = quantityIngredients;
+	public String getBreadName() {
+		return this.breadEnums.BreadName();
 	}
 
-	public Integer getSelectOption() {
-		return selectOption;
+	public Double getBreadValue() {
+		return this.breadEnums.breadValue();
 	}
-
-	public void setSelectOption(Integer selectOption) {
-		this.selectOption = selectOption;
+	
+	private String meatList() {
+		String ret = "";
+		for (MeatEnums meat : meatEnums) {
+			ret += meat.getName();
+			if(meat.ordinal() < this.meatEnums.size() - 1) {
+				ret +=  ", "; 
+			}
+			
+		}
+		return ret;
 	}
+	
+	private Double Total() {
+		double total = getBreadValue();
+		
+		for(MeatEnums value : meatEnums) {
+			total += value.getValue();
+		}
 
-	public Integer getQuantityIngredients() {
-		return quantityIngredients;
-	}
-
-	public void setQuantityIngredients(Integer quantityIngredients) {
-		this.quantityIngredients = quantityIngredients;
+		return total;
 	}
 
 	@Override
 	public String toString() {
-		return "Bread: " + getBreadName()
-				+ "";
-
+		StringBuilder sb = new StringBuilder();
+		sb.append("\nBread: " + getBreadName());
+		sb.append("\nMeat: ");
+		sb.append(meatList());
+		sb.append("\nTotal: " + String.format("%.2f", Total()));
+		
+		
+		return sb.toString();
 	}
 
 }

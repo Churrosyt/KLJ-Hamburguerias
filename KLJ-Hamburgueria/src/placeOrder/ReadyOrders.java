@@ -1,29 +1,23 @@
 package placeOrder;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import IngredientsHamburguer.BreadEnums;
+import IngredientsHamburguer.MeatEnums;
 import hamburguer.Hamburguer;
 
 public class ReadyOrders {
 	static Scanner input = new Scanner(System.in);
 
 	static PrintOrders print = new PrintOrders();
+	static List<MeatEnums> aaa =  new ArrayList<>();
 	
 	public static void main(String[] args) {	
 		
-		operations();
+		operations(); //Chamando o metodo da Classe Print
 		
-		
-		
-	/*	HamburguerIngredientBread a1 = new HamburguerIngredientBread(1);
-		HamburguerIngredientBread a2 = new HamburguerIngredientBread(2);
-		HamburguerIngredientBread a3 = new HamburguerIngredientBread(3);
-		a1.selectValue();
-		a2.selectValue();
-		a3.selectValue();
-		
-		*/
 	}
 	
 	public static void operations() {
@@ -33,7 +27,7 @@ public class ReadyOrders {
 
 		switch (operations) {
 		case 1:
-			assembleHamburguer();
+			chooseBread();
 			break;
 		case 2:
 			
@@ -49,19 +43,35 @@ public class ReadyOrders {
 		}
 	}
 	
-	public static void assembleHamburguer() {
+	public static void chooseBread() {
 		
 		print.BreadList();
 		// TRATAR
-		int selectOption = input.nextInt() - 1;
-		BreadEnums bread = BreadEnums.values()[selectOption];
-		Hamburguer hamburguer = new Hamburguer(bread);
-
-		System.out.printf("%s", hamburguer.toString() );
+		int selectOptionBread = input.nextInt() - 1; // percorrer a lista enum do 0
+		BreadEnums bread = BreadEnums.values()[selectOptionBread]; //chamando a posição da minha lista enum pelo selectOption
 		
+		System.out.print("| \nDeseja escolher quantos Meat? ");
+		int quantityHamburguers =  input.nextInt();
+		ArrayList<MeatEnums> meatList = new ArrayList<>();
+		int selectOptionMeat = 0;
+		for (int i = 0 ; i < quantityHamburguers ; i++) {
+			print.meatList();
+			selectOptionMeat = input.nextInt() - 1;
+			MeatEnums meat = MeatEnums.values()[selectOptionMeat];
+			meatList.add(meat);	
+			
+		}
+
+		
+		
+		
+		Hamburguer hamburguer = new Hamburguer(bread, meatList); //instancio a classe Hamburguer e passo como argumento o valor selecionado da minha lista
+		System.out.println(hamburguer.toString());
 	}
 	
-	public static void listMeat() {
+	
+	
+	public static void listRequest() {
 		Hamburguer ham = new Hamburguer();
 		System.out.println(ham.toString());
 	}
