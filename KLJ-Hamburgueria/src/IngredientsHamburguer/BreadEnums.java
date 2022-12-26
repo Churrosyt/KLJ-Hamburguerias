@@ -23,9 +23,5 @@ public enum BreadEnums {
 		return breadValue;
 	}
 	
-/*	@Override
-	public String toString() {
-		return nameBread;
-	}
-*/
+
 }
