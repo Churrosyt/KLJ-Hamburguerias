@@ -2,11 +2,11 @@ package IngredientsHamburguer;
 
 public enum SauceEnums {
 	
-	ketchup("ketchup", 0.0)
-	,Mayo("Mayo", 0.0)
-	,garlic_sauce("Garlic Sauce", 0.0)
-	,barbecue("barbecue", 0.0)
-	,mustard("mustard", 0.0);
+	ketchup("ketchup", 0.00)
+	,Mayo("Mayo", 0.00)
+	,garlic_sauce("Garlic Sauce", 0.00)
+	,barbecue("barbecue", 0.00)
+	,mustard("mustard", 0.00);
 	
 	private String SauceName;
 	private Double SauceValue;

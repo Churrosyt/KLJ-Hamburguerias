@@ -7,15 +7,13 @@ import IngredientsHamburguer.BreadEnums;
 import IngredientsHamburguer.MeatEnums;
 import IngredientsHamburguer.SauceEnums;
 import IngredientsHamburguer.VegetableEnums;
-import hamburguer.Hamburguer;
+import allOrders.CustomerOrdersCompleted;
+import listsFoods.Hamburguer;
 
 public class ReadyOrders {
 	static Scanner input = new Scanner(System.in);
-
-	static Menu menu = new Menu();
-	/*static List<MeatEnums> MeatList =  new ArrayList<>();
-	static List<VegetableEnums> vegetableList =  new ArrayList<>();
-	static List<SauceEnums> sauceList =  new ArrayList<>();*/
+	static MenuHamburguer menu = new MenuHamburguer();
+	static CustomerOrdersCompleted custumerOrdersCompleted = new CustomerOrdersCompleted();
 	
 	public static void main(String[] args) {	 
 		
@@ -30,7 +28,7 @@ public class ReadyOrders {
 
 		switch (operations) {
 		case 1:
-			chooseBread();
+			assembleHamburguer();
 			break;
 		case 2:
 			
@@ -46,7 +44,7 @@ public class ReadyOrders {
 		}
 	}
 	
-	public static void chooseBread() {
+	public static void assembleHamburguer() {
 		
 		menu.BreadList();
 		// TRATAR
@@ -93,14 +91,14 @@ public class ReadyOrders {
 		
 		
 		Hamburguer hamburguer = new Hamburguer(bread, meatList, vegetableList, sauceList); //instancio a classe Hamburguer e passo como argumento o valor selecionado da minha lista
-		System.out.println(hamburguer.toString());
+		System.out.println(custumerOrdersCompleted.toString());
 	}
 	
 	
 	
 	
-	public static void listRequest() {
-	//	Hamburguer ham = new Hamburguer();
-		//System.out.println(ham.toString());
-	}
+//	public static void listRequest() {
+//	Hamburguer ham = new Hamburguer();
+//		System.out.println(ham.toString());
+//	}
 }

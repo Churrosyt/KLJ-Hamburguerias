@@ -16,10 +16,11 @@ public enum BreadEnums {
 		this.breadValue = breadValue;
 	}
 	
-	public String BreadName() {
+	public String getBreadName() {
 		return breadName;
 	}
-	public Double breadValue() {
+
+	public Double getBreadValue() {
 		return breadValue;
 	}
 	

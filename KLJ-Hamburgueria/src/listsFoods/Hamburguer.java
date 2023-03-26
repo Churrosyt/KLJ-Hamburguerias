@@ -1,21 +1,22 @@
-package hamburguer;
+package listsFoods;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import IngredientsHamburguer.BreadEnums;
 import IngredientsHamburguer.MeatEnums;
 import IngredientsHamburguer.SauceEnums;
 import IngredientsHamburguer.VegetableEnums;
+import allOrders.CustomerOrdersCompleted;
 
 public class Hamburguer {
 
 	private BreadEnums breadEnums;
-	private ArrayList<MeatEnums> meatEnums = new ArrayList<>();
-	private ArrayList<VegetableEnums> vegetableEnums = new ArrayList<>();
-	private ArrayList<SauceEnums> sauceEnums = new ArrayList<>();
+	private List<MeatEnums> meatEnums = new ArrayList<>();
+	private List<VegetableEnums> vegetableEnums = new ArrayList<>();
+	private List<SauceEnums> sauceEnums = new ArrayList<>();
 
 
-	
 	
 
 	public Hamburguer(BreadEnums breadEnums, ArrayList<MeatEnums> meatEnums, ArrayList<VegetableEnums> vegetableEnums,
@@ -26,18 +27,16 @@ public class Hamburguer {
 		this.sauceEnums = sauceEnums;
 	}
 
-	public String getBreadName() {
-		return this.breadEnums.BreadName();
+	public Hamburguer() {
+		
 	}
 
-	public Double getBreadValue() {
-		return this.breadEnums.breadValue();
-	}
+
 
 	private String meatList() {
 		String ret = "";
 		for (MeatEnums meat : meatEnums) {
-			ret += meat.getName();
+			ret += meat.getMeatName();
 			if (meat.ordinal() < this.meatEnums.size() - 1) {
 				ret += ", ";
 			}
@@ -69,10 +68,10 @@ public class Hamburguer {
 	
 
 	private Double totalHamburguer() {
-		double total = getBreadValue();
+		double total = breadEnums.getBreadValue();
 
 		for (MeatEnums value : meatEnums) {
-			total += value.getValue();
+			total += value.getMeatValue();
 		}
 
 		return total;
@@ -81,7 +80,7 @@ public class Hamburguer {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("\nBread: " + getBreadName());
+		sb.append("\nBread: " + breadEnums.getBreadName());
 		sb.append("\nMeat: " + meatList());
 		sb.append("\nVegetable: " + VegetableList()) ;
 		sb.append("\nSauce: " + SauceList());

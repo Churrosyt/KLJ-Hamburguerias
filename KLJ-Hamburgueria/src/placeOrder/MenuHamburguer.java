@@ -5,7 +5,7 @@ import IngredientsHamburguer.MeatEnums;
 import IngredientsHamburguer.SauceEnums;
 import IngredientsHamburguer.VegetableEnums;
 
-public class Menu {
+public class MenuHamburguer {
 	private static BreadEnums[] breads = BreadEnums.values();
 	private static MeatEnums[] meats = MeatEnums.values();
 	private static VegetableEnums[] vegetable = VegetableEnums.values();
@@ -27,7 +27,7 @@ public class Menu {
 		System.out.println(" ----- CHOOSE THE BREAD -----");
 		int i =0;
 		for(  ; i < breads.length ; i++) { //For que esta percorrendo a lista criada no enum, com o nome e o valor do ingrediente
-		System.out.printf("|   OPTION %d - %s $(%.2f) \n",(i+1),breads[i].BreadName(),breads[i].breadValue());
+		System.out.printf("|   OPTION %d - %s $(%.2f) \n",(i+1),breads[i].getBreadName(),breads[i].getBreadValue());
 		}
 		System.out.printf("|   OPTION %d - BACK \n" , (i+1));
 	}
@@ -36,7 +36,7 @@ public class Menu {
 		System.out.println(" ----- CHOOSE THE MEAT -----");
 		int i =0;
 		for(  ; i < breads.length ; i++) { //For que esta percorrendo a lista criada no enum, com o nome e o valor do ingrediente
-		System.out.printf("|   OPTION %d - %s $(%.2f) \n",(i+1),meats[i].getName(),meats[i].getValue());
+		System.out.printf("|   OPTION %d - %s $(%.2f) \n",(i+1),meats[i].getMeatName(),meats[i].getMeatValue());
 		}
 		System.out.printf("|   OPTION %d - BACK \n" , (i+1));
 		

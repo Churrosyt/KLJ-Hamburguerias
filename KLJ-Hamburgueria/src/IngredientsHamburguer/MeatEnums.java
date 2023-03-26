@@ -16,11 +16,11 @@ public enum MeatEnums {
 		this.meatValue = meatValue;
 	}
 	
-	public String getName() {
+	public String getMeatName() {
 		return meatName;
 	}
 	
-	public Double getValue() {
+	public Double getMeatValue() {
 		return meatValue;
 	}
 	
