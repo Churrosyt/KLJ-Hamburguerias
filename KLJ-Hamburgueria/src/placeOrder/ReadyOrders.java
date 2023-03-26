@@ -1,7 +1,6 @@
 package placeOrder;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import IngredientsHamburguer.BreadEnums;
@@ -18,7 +17,7 @@ public class ReadyOrders {
 	static List<VegetableEnums> vegetableList =  new ArrayList<>();
 	static List<SauceEnums> sauceList =  new ArrayList<>();*/
 	
-	public static void main(String[] args) {	
+	public static void main(String[] args) {	 
 		
 		operations(); //Chamando o metodo da Classe Print
 		
@@ -26,7 +25,7 @@ public class ReadyOrders {
 	
 	public static void operations() {
 
-		menu.listOperations(); // lista de operaçoes
+		menu.listOperations(); // lista de operaï¿½oes
 		int operations = input.nextInt();
 
 		switch (operations) {
@@ -40,7 +39,7 @@ public class ReadyOrders {
 			
 			break;
 		default:
-			System.out.println("Opção inválida!");
+			System.out.println("Opï¿½ï¿½o invï¿½lida!");
 			operations();
 			break;
 
@@ -52,7 +51,7 @@ public class ReadyOrders {
 		menu.BreadList();
 		// TRATAR
 		int selectOptionBread = input.nextInt() - 1; // percorrer a lista enum do 0
-		BreadEnums bread = BreadEnums.values()[selectOptionBread]; //chamando a posição da minha lista enum pelo selectOption
+		BreadEnums bread = BreadEnums.values()[selectOptionBread]; //chamando a posiï¿½ï¿½o da minha lista enum pelo selectOption
 		
 		System.out.print("| \nDo you want to choose how many meat? ");
 		int quantityMeat =  input.nextInt();
@@ -99,10 +98,9 @@ public class ReadyOrders {
 	
 	
 	
+	
 	public static void listRequest() {
 	//	Hamburguer ham = new Hamburguer();
 		//System.out.println(ham.toString());
 	}
-	
-	
 }
